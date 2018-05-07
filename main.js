@@ -18,7 +18,7 @@ function getUrlVars() {
 function getName() {
     var name = getUrlVars()["name"];
 
-    if(name.match(/^[0-9a-zA-Z]{1,32}$/)){
+    if((name != undefined) && (name.match(/^[0-9a-zA-Z]{1,32}$/))) {
         return name;
     }
     else {
@@ -30,7 +30,7 @@ function getName() {
 function getPhoto() {
     var photo = getUrlVars()["photo"];
 
-    if(photo.match(/^[0-9a-zA-Z:/\.\-_\(\)]+$/)){
+    if((photo != undefined) && (photo.match(/^[0-9a-zA-Z:/\.\-_\(\)]+$/))) {
         return photo;
     }
     else {
@@ -42,7 +42,7 @@ function getPhoto() {
 function getExpiration() {
     var expiration = getUrlVars()["expiration"];
 
-    if(expiration.match(/^[0-9,]+$/m)){
+    if((expiration != undefined) && (expiration.match(/^[0-9,]+$/m))) {
         return expiration;
     }
     else {
