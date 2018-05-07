@@ -1,0 +1,77 @@
+@font-face {
+	font-family: 'quicksand';
+	src: url('fonts/Quicksand_Book.otf');
+}
+@font-face {
+	font-family: 'quicksand-bold';
+	src: url('fonts/Quicksand_Bold.otf');
+}
+
+a:link {
+	color:white;
+}
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+a:active {
+	text-decoration: none;
+	color: white;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: quicksand, sans-serif;
+	padding: 40px;
+	text-align: center;
+}
+
+.main-container {
+	width: 90%;
+	margin: auto;
+}
+
+#headshot {
+    padding: 10px 10px 10px 10px;
+    border-radius: 300px;
+}
+
+#name {
+	font-size: 50px;
+}
+
+#revealExpiration {
+    padding: 100px 10px 10px 10px;
+}
+
+#expiration {
+	display: none;
+}
+
+@media only screen and (max-width: 900px) {
+
+}
+
+@media only screen and (max-width: 750px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		padding: 10px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#headshot {
+		width: 200px;
+		height: 200px;
+		border-radius: 200px;
+	}
+}
