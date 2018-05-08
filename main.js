@@ -1,7 +1,92 @@
 var expiration = "";
+var tickInterval;
 
 function tick() {
+    expiration[expiration.length - 1]--;
 
+    var outOfTimeMan = true;
+    for(var i = expiration.length - 1; i > 2; i--) {
+        if(expiration[i] != 0) {
+            outOfTimeMan = false;
+            break;
+        }
+    }
+
+    if(outOfTimeMan == false) {
+        for(var i = expiration.length - 1; i > 2; i--) {
+            if(expiration[i] < 0) {
+                if(i > 3) {
+                    expiration[i] = 59;
+                } else {
+                    expiration[i] = 0;
+                }
+                expiration[i - 1]--;
+            }
+        }
+    } else {
+        clearInterval(tickInterval);
+    }
+
+    $("#expiration").html(expiration[3].toString().padStart(2,0) + ":" + expiration[4].toString().padStart(2,0) + ":" + expiration[5].toString().padStart(2,0) + "<br>hours");
+}
+
+function displayInitialExpiration() {
+    expiration = expiration.split(",");
+
+    var mostSignificantNumber = -1;
+
+    for(var i = 0; i < expiration.length; i++) {
+        expiration[i] = parseInt(expiration[i]);
+        if(expiration[i] != 0) {
+            mostSignificantNumber = i;
+            break;
+        }
+    }
+
+    if(mostSignificantNumber == -1) {
+        expiration = [0, 0, 0, 12, 0, 0];
+        mostSignificantNumber = 3;
+        console.log("Rejected Expiration.");
+    }
+
+    var plural = "";
+    if(expiration[mostSignificantNumber] > 1) {
+        plural += "s";
+    }
+
+    var time = " ";
+
+    switch (mostSignificantNumber) {
+        case 0:
+            time += "year";
+            break;
+        case 1:
+            time += "month";
+            break;
+        case 2:
+            time += "day";
+            break;
+        case 3:
+            time += "hour";
+            break;
+        case 4:
+            time += "minute";
+            break;
+        case 5:
+            time += "second";
+            break;
+    }
+
+    $("#expiration").html(expiration[mostSignificantNumber] + time + plural);
+
+    if(mostSignificantNumber >= 3) {
+        setTimeout(function() {
+            expiration[expiration.length - 1]++;
+            tickInterval = setInterval(function() {
+                tick();
+            }, 1000);
+        }, 3000);
+    }
 }
 
 function getUrlVars() {
@@ -64,9 +149,7 @@ function revealExpiration() {
         expiration = "0,0,0,12,0,0";
     }
 
-    setInterval(function() {
-        tick();
-    }, 1000);
+    displayInitialExpiration();
 }
 
 $(document).ready(function() {
