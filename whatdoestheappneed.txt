@@ -1,5 +1,5 @@
-Tap to reveal time left
-Countdown after that
+*Tap to reveal time left
+*Countdown after that
 *Query string  to set time?
 *Photo of Person?
 Orange Fade effect

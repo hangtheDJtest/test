@@ -25,7 +25,7 @@ a:active {
 }
 
 body {
-    background-color: black;
+	background: radial-gradient(#291e04, #191202, #000000);
     color: white;
     font-family: quicksand, sans-serif;
 	padding: 40px;
@@ -39,20 +39,50 @@ body {
 
 #headshot {
     padding: 10px 10px 10px 10px;
-    border-radius: 300px;
+	border-radius: 300px;
+	border-style: solid;
+	border-color: #9c6f1c;
+	border-width: 8px;
 }
 
 #name {
-	font-size: 50px;
+	font-size: 60px;
+    margin-top: 25px;
 }
 
 #revealExpiration {
-    padding: 100px 10px 10px 10px;
+	padding: 100px 10px 50px 10px;
+	font-size: 20px;
+}
+
+#revealExpiration span {
+	font-size: 30px;
+}
+
+#fingerprint {
+	display: block;
+	margin: auto;
+	padding: 30px 10px 30px 10px;
+	cursor: pointer;
 }
 
 #expiration {
 	display: none;
+	font-size: 60px;
+	vertical-align: middle;
+	letter-spacing: 10px;
 }
+#expiration span {
+	font-size: 10px;
+	letter-spacing: 3px;
+}
+
+#helper {
+    display: none;
+    height: 100%;
+    vertical-align: middle;
+}
+
 
 @media only screen and (max-width: 900px) {
 

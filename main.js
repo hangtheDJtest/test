@@ -27,7 +27,7 @@ function tick() {
         clearInterval(tickInterval);
     }
 
-    $("#expiration").html(expiration[3].toString().padStart(2,0) + ":" + expiration[4].toString().padStart(2,0) + ":" + expiration[5].toString().padStart(2,0) + "<br>hours");
+    $("#expiration").html(expiration[3].toString().padStart(2,0) + ":" + expiration[4].toString().padStart(2,0) + ":" + expiration[5].toString().padStart(2,0) + "<br><span>hours</span>");
 }
 
 function displayInitialExpiration() {
@@ -140,7 +140,8 @@ function revealExpiration() {
     $("#headshot").css("display", "none");
     $("#name").css("display", "none");
     $("#revealExpiration").css("display", "none");
-    $("#expiration").css("display", "inline");
+    $("#expiration").css("display", "inline-block");
+    $("#helper").css("display", "inline-block");
 
     expiration = getExpiration();
 
@@ -167,7 +168,7 @@ $(document).ready(function() {
         $("#name").css("display", "none");
     }
     
-    $("#revealExpiration").click(function() {
+    $("#fingerprint").on('click touchstart', function() {
         revealExpiration();
     });
 });
