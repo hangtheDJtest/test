@@ -24,9 +24,16 @@ function tick() {
             }
         }
     } else {
+        $("#expiration").fadeOut("slow");
+        $("#background").fadeOut("slow");
+        setTimeout(function() {
+            $("#expiration").html("END");
+            $("#expiration").fadeIn("slow");
+            $("#background").fadeIn("slow");
+            $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+        }, 1000);
         clearInterval(tickInterval);
     }
-
     $("#expiration").html(expiration[3].toString().padStart(2,0) + ":" + expiration[4].toString().padStart(2,0) + ":" + expiration[5].toString().padStart(2,0) + "<br><span>hours</span>");
 }
 
@@ -59,9 +66,17 @@ function displayInitialExpiration() {
     switch (mostSignificantNumber) {
         case 0:
             time += "year";
+            $("#background").fadeOut("fast");
+            setTimeout(function() {
+                $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+            }, 500);
             break;
         case 1:
             time += "month";
+            $("#background").fadeOut("fast");
+            setTimeout(function() {
+                $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+            }, 500);
             break;
         case 2:
             time += "day";
@@ -71,21 +86,43 @@ function displayInitialExpiration() {
             break;
         case 4:
             time += "minute";
+            $("#background").fadeOut("fast");
+            setTimeout(function() {
+                $('#background').css("background", "radial-gradient(#581212, #000000, #000000)");
+            }, 500);
             break;
         case 5:
             time += "second";
+            $("#background").fadeOut("fast");
+            setTimeout(function() {
+                $('#background').css("background", "radial-gradient(#581212, #000000, #000000)");
+            }, 500);
             break;
     }
+
+    setTimeout(function() {
+        $("#background").fadeIn("fast");
+    }, 500);
+    
+    $("#expiration").css("display", "none");
+    setTimeout(function() {
+        $("#expiration").fadeIn("slow").css("display","inline-block");
+    }, 500);
+    
 
     $("#expiration").html(expiration[mostSignificantNumber] + time + plural);
 
     if(mostSignificantNumber >= 3) {
         setTimeout(function() {
             expiration[expiration.length - 1]++;
+            $("#expiration").fadeOut("slow");
+            setTimeout(function() {
+                $("#expiration").fadeIn("slow").css("display","inline-block");
+            }, 1000);
             tickInterval = setInterval(function() {
                 tick();
             }, 1000);
-        }, 3000);
+        }, 4000);
     }
 }
 
@@ -137,11 +174,15 @@ function getExpiration() {
 }
 
 function revealExpiration() {
-    $("#headshot").css("display", "none");
-    $("#name").css("display", "none");
-    $("#revealExpiration").css("display", "none");
-    $("#expiration").css("display", "inline-block");
-    $("#helper").css("display", "inline-block");
+    $("#headshot").fadeOut("slow");
+    $("#name").fadeOut("slow");
+    $("#revealExpiration").fadeOut("slow");
+    $("#background").fadeOut("slow");
+    setTimeout(function() {
+        $("#expiration").css("display", "inline-block");
+        $("#helper").css("display", "inline-block");
+    }, 1000);
+
 
     expiration = getExpiration();
 
@@ -150,7 +191,9 @@ function revealExpiration() {
         expiration = "0,0,0,12,0,0";
     }
 
-    displayInitialExpiration();
+    setTimeout(function() {
+        displayInitialExpiration();
+    }, 1000);
 }
 
 $(document).ready(function() {
