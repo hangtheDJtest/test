@@ -117,7 +117,10 @@ function displayInitialExpiration() {
             expiration[expiration.length - 1]++;
             $("#expiration").fadeOut("slow");
             setTimeout(function() {
-                $("#expiration").fadeIn("slow").css("display","inline-block");
+                $("#expiration").fadeIn("slow")
+                $("#expiration").css("display","inline-block");
+                $("#expiration").css("font-family", "future");
+                $("#expiration").css("letter-spacing", "-10px");
             }, 1000);
             tickInterval = setInterval(function() {
                 tick();

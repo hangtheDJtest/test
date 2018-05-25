@@ -6,6 +6,10 @@
 	font-family: 'quicksand-bold';
 	src: url('fonts/Quicksand_Bold.otf');
 }
+@font-face {
+	font-family: 'future';
+	src: url('fonts/FUTRFW.ttf');
+}
 
 a:link {
 	color:white;
@@ -34,7 +38,7 @@ body {
 
 #background {
 	background: radial-gradient(#291e04, #191202, #000000);
-    position: absolute;
+    position: fixed;
     top: 0px;
     bottom: 0px;
     left: 0px;
@@ -107,8 +111,10 @@ body {
 	letter-spacing: 10px;
 }
 #expiration span {
-	font-size: 10px;
-	letter-spacing: 3px;
+	font-size: 20px;
+    letter-spacing: -7px;
+    position: relative;
+    left: -145px;
 }
 
 #helper {
