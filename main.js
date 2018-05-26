@@ -215,6 +215,7 @@ $(document).ready(function() {
     }
     
     $("#fingerprint").on('click touchstart', function() {
+        $("#fingerprint").off();
         revealExpiration();
     });
 });
