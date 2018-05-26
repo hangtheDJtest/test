@@ -30,7 +30,7 @@ function tick() {
             $("#expiration").html("END");
             $("#expiration").fadeIn("slow");
             $("#background").fadeIn("slow");
-            $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+            $('#background').css("background", "radial-gradient(rgb(20, 69, 77), rgb(9, 11, 13), rgb(0, 0, 0))");
         }, 1000);
         clearInterval(tickInterval);
     }
@@ -68,14 +68,14 @@ function displayInitialExpiration() {
             time += "year";
             $("#background").fadeOut("fast");
             setTimeout(function() {
-                $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+                $('#background').css("background", "radial-gradient(rgb(20, 69, 77), rgb(9, 11, 13), rgb(0, 0, 0))");
             }, 500);
             break;
         case 1:
             time += "month";
             $("#background").fadeOut("fast");
             setTimeout(function() {
-                $('#background').css("background", "radial-gradient(#39727b, #000000, #000000)");
+                $('#background').css("background", "radial-gradient(rgb(20, 69, 77), rgb(9, 11, 13), rgb(0, 0, 0))");
             }, 500);
             break;
         case 2:
@@ -88,14 +88,14 @@ function displayInitialExpiration() {
             time += "minute";
             $("#background").fadeOut("fast");
             setTimeout(function() {
-                $('#background').css("background", "radial-gradient(#581212, #000000, #000000)");
+                $('#background').css("background", "radial-gradient(rgb(91, 16, 16), rgb(28, 12, 12), rgb(0, 0, 0))");
             }, 500);
             break;
         case 5:
             time += "second";
             $("#background").fadeOut("fast");
             setTimeout(function() {
-                $('#background').css("background", "radial-gradient(#581212, #000000, #000000)");
+                $('#background').css("background", "radial-gradient(rgb(91, 16, 16), rgb(28, 12, 12), rgb(0, 0, 0))");
             }, 500);
             break;
     }
