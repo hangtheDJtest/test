@@ -20,8 +20,8 @@ Example:  http://mtagius.com/hang-the-dj/?name=Obama&photo=https://pbs.twimg.com
 
 If the expiration has 0 listed for the years, months, and days an expiration countdown will appear after the user clicks the fingerprint button.  If the expiration has a value that's not 0 for any of those numbers the countdown will not appear and the largest value will be shown to display the expiration.
 
-![Picture of the app](https://github.com/mtagius/hang-the-dj/blob/master/advertisement-screenshots/1.png)
+![Picture of the app](http://mtagius.com/hang-the-dj/advertisement-screenshots/1.png)
 
-![Picture of the app](https://github.com/mtagius/hang-the-dj/blob/master/advertisement-screenshots/2.png)
+![Picture of the app](http://mtagius.com/hang-the-dj/advertisement-screenshots/2.png)
 
-![Picture of the app](https://github.com/mtagius/hang-the-dj/blob/master/advertisement-screenshots/3.png)
+![Picture of the app](http://mtagius.com/hang-the-dj/advertisement-screenshots/3.png)
