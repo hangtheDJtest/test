@@ -6,11 +6,14 @@ Well, this novelty web app hopes to recreate the "Coach" device the characters u
 
 Usage:
 
-http://mtagius.com/hang-the-dj/?name=<NAME>&photo=<PHOTO>&expiration=<EXPIRATION>
+http://mtagius.com/hang-the-dj/?name=NAME&photo=PHOTO&expiration=EXPIRATION
 
 NAME: The name of the person you want to appear on the page
+
 PHOTO: A direct link to a picture of the person
+
 EXPIRATION: The expiration time in this format 0,0,0,12,0,0
+
 The first number is for years, the second for months, the third for days, hours, minutes, and seconds
 
 Example:  http://mtagius.com/hang-the-dj/?name=Obama&photo=https://pbs.twimg.com/profile_images/822547732376207360/5g0FC8XX_400x400.jpg&expiration=0,0,0,12,0,0
