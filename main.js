@@ -4,6 +4,10 @@ var tickInterval;
 function tick() {
     expiration[expiration.length - 1]--;
 
+    if(expiration[3] + expiration[4] == 0) {
+        $('#background').css("background", "radial-gradient(rgb(91, 16, 16), rgb(28, 12, 12), rgb(0, 0, 0))");
+    }
+
     var outOfTimeMan = true;
     for(var i = expiration.length - 1; i > 2; i--) {
         if(expiration[i] != 0) {
