@@ -1,4 +1,4 @@
-var expiration = "";
+var expiration = "forever";
 var tickInterval;
 
 function tick() {
@@ -55,7 +55,7 @@ function displayInitialExpiration() {
     }
 
     if(mostSignificantNumber == -1) {
-        expiration = [0, 0, 0, 12, 0, 0];
+        expiration = [, 99999999, 12, 23, 59, 59];
         mostSignificantNumber = 3;
         console.log("Rejected Expiration.");
     }
